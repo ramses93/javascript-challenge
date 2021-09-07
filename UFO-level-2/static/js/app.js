@@ -38,7 +38,7 @@ function display_table(data)
 	// iterate through data and append each row
 	data.forEach((data_row) => {
 		var row = tbody.append("tr");
-		Object.values(data_row).foreach((value) => {
+		Object.values(data_row).forEach((value) => {
 			var cell = row.append("td");
 			cell.text(value);
 		});
@@ -51,7 +51,7 @@ var filters = {};
 
 function load_filters()
 {
-	var element = d3.select(this).select("input");
+	var element = d3.select("input");
 	var value = element.property("value");
 	var filter = element.attr("id");
 	
