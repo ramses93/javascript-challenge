@@ -60,4 +60,16 @@ button.on("click", function() {
 			});
 		});
 	}
+	else // value is empty, so no date has been inputted
+	{
+		// append empty elements
+		tableData.forEach(function(ufoSighting){
+			var row =tbody.append("tr");
+		
+			Object.entries(ufoSighting).forEach(([key,value]) => {
+				var cell = row.append("td");
+				cell.text(value);
+			});
+		});
+	}
 });
