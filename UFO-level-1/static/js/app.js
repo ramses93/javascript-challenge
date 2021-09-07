@@ -39,12 +39,17 @@ button.on("click", function() {
 	// perform query
 	var data = tableData.filter(ufoSighting => (ufoSighting.datetime ===date_value));
 	
-	// Use D3 to select the table body
+
+	// select the table body
 	var tbody = d3.select("tbody");
-	// Use D3 to select the table
+
+	// select table
 	var table = d3.select("table");
-	//remove any children from the table to 
+
+
+	// delete any object in table
 	tbody.html("");
+
 	// Use D3 to set the table class to `table table-striped`
 	table.attr("class", "table table-striped");
 
