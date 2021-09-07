@@ -44,6 +44,7 @@ function load_filters()
 		if(value) // not empty
 		{
 			filters[filter] = value;
+			console.log("FILTER: " + filter + " added to dict.");
 		}
 		else
 		{
@@ -90,9 +91,6 @@ button.on("click", function() {
 	// Apply filers
 	load_filters();
 	
-	display_table(tableData);
+	filter_table();
 	
 });
-
-// load table when page loads
-display_table(tableData);
