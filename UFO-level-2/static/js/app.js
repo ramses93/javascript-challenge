@@ -6,25 +6,6 @@ var tableData = data;
 // select the table body
 var tbody = d3.select("tbody");
 
-// select table
-var table = d3.select("table");
-
-
-// delete any object in table
-tbody.html("");
-
-// Use D3 to set the table class to `table table-striped`
-table.attr("class", "table table-striped");
-// Use d3 to append 1 cell per UFO sighting value 
-tableData.forEach(function(ufoSighting){
-    var row =tbody.append("tr");
-
-    Object.entries(ufoSighting).forEach(([key,value]) => {
-        var cell = row.append("td");
-        cell.text(value);
-    });
-});
-
 // get the Filter button
 var button = d3.select("#filter-btn");
 
@@ -51,18 +32,40 @@ var filters = {};
 
 function load_filters()
 {
-	var element = d3.select("input");
-	var value = element.property("value");
-	var filter = element.attr("id");
 	
-	if(value) // not empty
+	let fields = ["datetime", "city", "state", "country", "shape"];
+	
+	fields.forEach((filter) => {
+		var element = d3.select("#" + filter)
+		var value = element.property("value");
+		
+		console.log("#" + filter + ": " + value);
+		
+		if(value) // not empty
+		{
+			filters[filter] = value;
+		}
+		else
+		{
+			delete filters[filter]; // delete this filter because is empty
+		}
+			
+	});
+	
+	
+	/*var element = d3.select("input");
+	var value = element.property("value");
+	console.log(value);
+	var filter = element.attr("id");*/
+	
+	/*if(value) // not empty
 	{
 		filters[filter] = value;
 	}
 	else
 	{
 		delete filters[filter]; // delete this filter because is empty
-	}
+	}*/
 	
 	
 	// Now, apply filters to table
@@ -88,4 +91,8 @@ button.on("click", function() {
 	load_filters();
 	
 	display_table(tableData);
+	
 });
+
+// load table when page loads
+display_table(tableData);
