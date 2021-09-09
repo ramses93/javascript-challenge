@@ -16,3 +16,8 @@ I can handle this... right? The planet Earth needs to know what we have found!
 ### Dataset
 
 * [UFO Sightings Data](StarterCode/static/js/data.js)
+
+### UFO Level 1
+The first part of this assignment consisted on creating a JavaScript code that allows the user to filter the dataset given the date. The user enters the desired Date and then clicks on "Filter Table" to show the results for the date entered. These results are displayed in a table as can be seen in the next Figure:
+
+![Screenshot](/Screenshots/part1.png)
