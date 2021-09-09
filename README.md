@@ -21,3 +21,8 @@ I can handle this... right? The planet Earth needs to know what we have found!
 The first part of this assignment consisted on creating a JavaScript code that allows the user to filter the dataset given the date. The user enters the desired Date and then clicks on "Filter Table" to show the results for the date entered. These results are displayed in a table as can be seen in the next Figure:
 
 ![Screenshot](/Screenshots/part1.png)
+
+### UFO Level 2
+The second part of this assignment consisted on creating a JavaScript code that allows the user to filter the dataset given different parameters as Date, City, State, Country and Shape. The data can be filtered using one or all the filters available, which means that the user can fill only one of those filters and let the others in blank.
+
+![Screenshot](/Screenshots/part2.png)
